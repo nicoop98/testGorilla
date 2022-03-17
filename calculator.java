@@ -12,17 +12,18 @@ public class calculator {
 	    String ap2=calculator(viaje2);
 	    String ap3=calculator(viaje3);
 	    
-	    System.out.println("\nActual: "+ap1.toString());
-	    System.out.println("\nExpected: Prague-Zurich 676, expenses: 160.55");
-	    System.out.println("\nActual: "+ap2.toString());
-	    System.out.println("\nExpected: Prague Zurich 676, expenses: 160.55");
-	    System.out.println("\nActual: "+ap3.toString());
-	    System.out.println("\nExpected: trayecto2 20, expenses: 4.88");
+	    System.out.println("\nActual: \t"+ap1.toString());
+	    System.out.println("\nExpected: \tLongest: Prague-Zurich 676, Expenses: $160.55");
+	    System.out.println("\nActual: \t"+ap2.toString());
+	    System.out.println("\nExpected: \tLongest: Prague Zurich 676, Expenses: $160.55");
+	    System.out.println("\nActual: \t"+ap3.toString());
+	    System.out.println("\nExpected: \tLongest: trayecto2 20, Expenses: $4.88");
 	}
+	//(312+676)/8*1.3
 	
 	public static String calculator(String[] distancesList) {
         final double perLitre = 1.30;
-        final int consumption = 8;
+        final double consumption = 8;
         int totalDistance = 0;
         int[] distances = new int[distancesList.length];
     
@@ -39,11 +40,16 @@ public class calculator {
             if(distances[i] > maxDistance) {
                 totalDistance += distances[i];
                 max = i;
+                System.out.println(totalDistance);
             }
         }
         
+        double litres=totalDistance/consumption;
+     //       String cost=String.format("%.2f", (litres*1.3));
+        double cost=litres*perLitre;
+        String sb="Longest: "+distancesList[max].toString()+", Expenses: $"+cost;
         
-		return null;
+		return sb;
     }
 
 }
