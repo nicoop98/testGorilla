@@ -1,4 +1,8 @@
-public class Main {
+public class main {
+
+    String viaje1="Vienna-Prague 312, Prague-Zurich 676";
+    String viaje2="Vienna Prague 312, Prague Zurich 676";
+
 
     public static String calculator(String[] distancesList) {
         final double perLitre = 1.30;
@@ -13,7 +17,7 @@ public class Main {
             distances[i] = Integer.parseInt(distInKm);
         }
     
-        int MaxDistance = 0;
+        int maxDistance = 0;
         int max = 0;
         for(int i=0; i<distances.length; i++){
             if(distances[i] > maxDistance) {
@@ -22,7 +26,4 @@ public class Main {
             }
         }
     }
-
 }
-
-
